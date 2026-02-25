@@ -46,21 +46,50 @@
  *   hasSpecialIngredient("Elaichi Chai", "elaichi")  // => true
  */
 export function getChaiOrderLength(order) {
-  // Your code here
+  if (typeof order !== "string") return -1
+
+  const reciveorder = order.trim();
+  const orderlenght=reciveorder.length;
+  if(orderlenght==0) return 0;
+  return orderlenght;
 }
 
 export function shoutChaiOrder(order) {
-  // Your code here
+  if (typeof order !== "string") return ""
+     const reciveorder = order.trim();
+      const orderlenght=reciveorder.length;
+      if(orderlenght==0) return "";
+     const reciveorderuppercase = reciveorder.toUpperCase();
+     return reciveorderuppercase;
 }
 
 export function whisperChaiOrder(order) {
-  // Your code here
+     if (typeof order !== "string") return ""
+      const reciveorder = order.trim();
+      const orderlenght = reciveorder.length;
+      if(orderlenght==0) return "";
+      const reciveorderlowercase = reciveorder.toLowerCase();
+      return reciveorderlowercase;
 }
 
 export function hasSpecialIngredient(order, ingredient) {
-  // Your code here
+ if (typeof order !== "string" || typeof ingredient !== "string")
+  return false;
+  const _ingredient = ingredient.trim()
+  if(_ingredient.length==0) return false 
+  const order_ = order.toLowerCase();
+  const ingredient_ = _ingredient.toLowerCase()
+  const  exist = order_.includes(ingredient_)
+  return  exist
 }
 
 export function getFirstAndLastChar(order) {
-  // Your code here
+  if (typeof order !== "string") return null;
+    const given = order.trim();
+    if(given.length==0) return null;
+    const togivenlower = given.toLowerCase()
+    const first = togivenlower.charAt(0);
+    const last = togivenlower.at(-1);
+     return  { first, last };
+
 }
